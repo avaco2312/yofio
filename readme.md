@@ -202,7 +202,7 @@ Pasemos ahora a los retos de la prueba técnica.
 
 #### Nivel básico
 
-Creamos un package **asigna** (código en **asigna/asigna.go**). En él creamos la interface **CreditAssigner** y además un tipo struct **AsignaCredito** que cumple esta interface. Su método **Assign** es el mismo algoritmo usado anteriormente con la diferencia de que retorna al encontrar la primera distribución posible. De no haberla, o si el valor de **investment** es no positivo o no divisible por 100, retorna error. Claro, esto favorece la distribución que primero aparece. En un caso real pudieran implementarse otros criterios de asignación.
+Creamos un package **asigna** (código en **asigna/asigna.go**). En él creamos la interface **CreditAssigner** y además un tipo struct **AsignaCredito** que cumple esta interface. Su método **Assign** es el mismo algoritmo usado anteriormente con la diferencia de que retorna al encontrar la primera distribución posible. Claro, esto favorece la distribución que primero aparece, en un caso real pudieran implementarse otros criterios de asignación. De no haber distribución posible, o si el valor de **investment** es no positivo o no divisible por 100, retorna error.
 
 Para hacer el programa más general, usamos la interfase  **CreditAssigner** de la que obtendremos una instancia mediante la función **NewCreditAssigner**. Por ahora lo que hace es crear una instancia del tipo "AsignaCredito" que responde al algoritmo estudiado. Pero en el futuro podemos crear otros tipos que respondan a otras formas de distribuir los créditos.
 
