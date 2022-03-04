@@ -366,7 +366,7 @@ El código en **avanzado/lambdas**.
 
 El enlace de API Gateway con las funciones lambda se define siguiendo la convención **lambda proxy** y se autoriza a cada entrada de la API a utilizar la correspondiente función lambda. También hay que autorizar cada función lambda a ejecutar las operaciones DynamoDB que requiera.
 
-Sólo comentaremos del código en el caso de la lambda **postInvestment**. Determina, usando el algoritmo, si el monto es distribuible. De serlo, escribe un registro en la base de datos con la distribución. Si no lo es, registra el monto. En ambos casos se asigna una Id y se actualiza el registro de estadísticas.
+Del código sólo comentaremos el caso de la lambda **postInvestment**. Determina, usando el algoritmo, si el monto es distribuible. De serlo, escribe un registro en la base de datos con la distribución. Si no lo es, registra el monto. En ambos casos se asigna una Id y se actualiza el registro de estadísticas.
 
 La escritura del registro de la asignación nueva y la actualización del registro de estadísticas se realizan mediante la operación de DynamoDB **TransactWriteItems** que garantiza que ambas operaciones se realicen de forma consistente (ambas se hacen ó ambas fallan).
 
@@ -489,7 +489,7 @@ Concluido el primer paso, el segundo va comparando cada juego de datos, lo esper
 
 - El monto es distribuible pero el monto generado por nuestra distribución difiere del monto de la distribución hecha por el algoritmo.
 
-Nos ubicamos en el directorio **asigna** para correr** el test:
+Nos ubicamos en el directorio **asigna** para correr el test:
 
 ```
 D:\yofio\asigna>go test -cover -race
