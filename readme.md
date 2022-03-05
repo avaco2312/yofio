@@ -530,8 +530,8 @@ El mecanismo es similar al test anterior, con las diferencias:
 Para realizar este test, dado que vamos a comprobar el registro de estadísticas, debemos partir de una tabla **yofio** limpia y preparada. Para ello, de existir, debemos eliminarla y luego inicializarla:
 
 ```
-D:\yofio\avanzado/local>go run . -d
-D:\yofio\avanzado/local>go run . -c
+D:\yofio\avanzado\local>go run . -d
+D:\yofio\avanzado\local>go run . -c
 ```
 
 Para correr el test:
