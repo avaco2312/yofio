@@ -7,6 +7,7 @@ Dividimos los retos de la prueba en:
 - [Nivel intermedio](#nivel-intermedio)
 - [Nivel avanzado](#nivel-avanzado)
 - [Testing](#testing)
+- [Actualización y test de rendimiento](#actualización-y-test-de-rendimiento)
 
 #### Algoritmo de solución
 
@@ -542,3 +543,24 @@ ok      yofio/avanzado  80.452s
 ```
 
 Es de notar que en este caso no tiene sentido ver concurrencia, no la hay, ni coverage, él codigo reside en la nube.
+
+#### Actualización y test de rendimiento
+
+- Se actualizó el código en **asigna/asigna.go** para realizar el cálculo de los límites con operaciones de enteros, sin utilizar el paquete "math", lo que debe ser más eficiente.
+
+- Pruebas de rendimiento sobre el servidor local.
+
+```
+D:\yofio>bombardier --duration 30s -m POST -b "{\"investment\":20000}" localhost/credit-assignment
+Bombarding http://localhost:80/credit-assignment for 30s using 125 connection(s)
+[================================================================================] 30s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     24973.51   15359.66   46957.38
+  Latency        4.98ms     4.28ms    77.84ms
+  HTTP codes:
+    1xx - 0, 2xx - 752103, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     8.39MB/s
+```
+

@@ -2,7 +2,6 @@ package asigna
 
 import (
 	"fmt"
-	"math"
 )
 
 type CreditAssigner interface {
@@ -32,7 +31,13 @@ func (c *AsignaCredito) Assign(investment int32) (int32, int32, int32, error) {
 
 	var v, u int32
 	for v = 0; v <= vMax; v++ {
-		for u = int32(math.Ceil((float64(f - 7*v)) / 3.0)); u <= (2*f-14*v)/5; u++ {
+		// Haciendo el calculo de los límites con enteros
+		li := (f - 7*v) / 3
+		if (f-7*v)%3 != 0 {
+			li++
+		}
+		ls := (2*f - 14*v) / 5
+		for u = li; u <= ls; u++ {
 			return 2*f - 14*v - 5*u, -f + 7*v + 3*u, v, nil
 		}
 	}
