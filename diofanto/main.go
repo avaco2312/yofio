@@ -17,18 +17,18 @@ func main() {
 		f := investment / 100
 
 		// Calculamos el límite superior de v
-		vMax :=investment / 700
+		vMax := investment / 700
 
 		var v, u int32
 		fmt.Print(investment)
 		found := false
 		for v = 0; v <= vMax; v++ {
-		// Haciendo el calculo de los límites con enteros
-		li := (f - 7*v) / 3
-		if (f-7*v)%3 != 0 {
-			li++
-		}
-		ls := (2*f - 14*v) / 5			
+			// Haciendo el calculo de los límites con enteros
+			li := (f - 7*v) / 3
+			if (f-7*v)%3 != 0 {
+				li++
+			}
+			ls := (2*f - 14*v) / 5
 			for u = li; u <= ls; u++ {
 				x := 2*f - 14*v - 5*u
 				y := -f + 7*v + 3*u
