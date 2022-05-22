@@ -1,5 +1,38 @@
 ### YoFio - Backend Golang - Prueba técnica
 
+Esta es una interesante prueba técnica de reclutamiento:
+
+Cuando disponemos de recursos económicos de nuevos inversionistas nos gusta plantearnos cuál es la mejor opción para invertirlos. Tenemos 3 montos de créditos que damos a nuestros clientes ($300, $500 y $700). Cuando llega el dinero de inversión, queremos determinar cuántos créditos de cada monto podríamos asignar con ese dinero, sin que nos sobre 1 peso. Tu trabajo para este ejercicio es ayudarnos a calcular las posibles cantidades de créditos de $300, $500 y $700 que podemos otorgar con el total de la inversión. Si existe más de una opción podrías seleccionar cualquiera de ellas.
+
+**Nivel básico:** Crea una implementación en Golang que satisfaga la anterior interfaz.
+
+**Nivel Intermedio:** Crea una API REST, y alójala en cualquier nube que desees (GCP, AWS, Azure, etc). Crea un servicio Rest /credit-assignment en donde se retorna el número de créditos a asignar por cada tipo:
+
+```
+POST → /credit-assignment
+{“investment”: 3000}
+```
+
+En caso de que se pueda asignar el crédito debería retornar un código HTTP 200 con esta respuesta:
+
+```
+{“credit_type_300”: 2, “credit_type_500”: 2, “credit_type_700”: 2}
+```
+
+En caso de que no pueda realizarse la asignación deberá retornar un código HTTP 400.
+
+**Nivel Avanzado:** Crear una base de datos para almacenar las asignaciones de créditos realizadas con la API. Crear un nuevo servicio POST → /statistics para retornar los estadísticos de las asignaciones con los siguientes datos:
+
+```
+● Total de asignaciones realizadas (e.g. 100)
+● Total de asignaciones exitosas (e.g. 40)
+● Total de asignaciones no exitosas (e.g. 60)
+● Promedio de inversión exitosa (e.g. 3545.6)
+● Promedio de inversión no exitosa (e.g. 350.3)
+```
+
+Crear las pruebas unitarias y de integración con cobertura superior al 90%.
+
 Dividimos los retos de la prueba en:
 
 - [Algoritmo de solución](#algoritmo-de-solución)
